@@ -41,7 +41,7 @@ func (c *RPCClient) GetHealth(ctx context.Context) (*string, *getHealthRpcError,
 	}
 
 	if resp.Error.Code != 0 {
-		return nil, &resp.Error, fmt.Errorf("RPC error: %d %v", resp.Error.Code, resp.Error.Message)
+		return nil, &resp.Error, nil
 	}
 
 	return &resp.Result, nil, nil
